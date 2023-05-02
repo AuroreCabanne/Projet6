@@ -172,7 +172,11 @@ li:hover, li a:hover {
   margin: 0 auto;
 }
 
-#model_gallery img, .gallery img {
+#model_gallery img {
+  width: 150px;
+}
+
+.gallery img {
   width: 100%;
 }
 
@@ -364,12 +368,15 @@ footer nav ul {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  background-color: black;
   display: flex;
   flex-direction: row;
   position: fixed;
   top: 0px;
   right: 700px;
+}
+
+.modal[aria-hidden="false"] + .edition {
+  display: none;
 }
 
 .publier {
@@ -379,14 +386,22 @@ footer nav ul {
   text-align: center;
   background-color: white;
   color: black;
-  padding: 13px 25px;
+  padding: 4px 25px;
   border-radius: 60px;
   border: 1px black;
 }
 
 /* MODALE */
 
-#modifier, #modifier_model {
+#modifier {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#modifier_model {
   display: flex;
   flex-direction: row;
   column-gap: 10px;
@@ -431,7 +446,7 @@ footer nav ul {
 }
 
 .model_titre {
-  margin-top: -32px;
+  margin-top: -52px;
   color: #000000;
   display: flex;
   justify-content: center;
@@ -488,8 +503,12 @@ footer nav ul {
   align-items: center;
   row-gap: 29px;
   justify-content: center;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 14px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+}
+
+#A1, #A2, #A3, #A4, #A5, #A6, #A7, #A8, #A9, #A10, #A11, #A12 #A13, #A14, #A15, #A16, #A17, #A18, #A19, #A20, #A21, #A22, #A23, #A24, #A25, #A26, #A27, #A28, #A29, #A30, #A31, #A32, #A33, #A34, #A35, #A36, #A37, #A38, #A39, #A40, #A41, #A42, #A43, #A44 {
+  margin: 0;
 }
 
 /* ICONE SUPPRIMER */
