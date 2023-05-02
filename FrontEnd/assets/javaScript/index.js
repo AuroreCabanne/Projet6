@@ -258,6 +258,12 @@ if (localStorage.getItem("token")) {
               },
             })
               .then((res) => res.json())
+              .then(() => {
+                // Supprimer l'ID du projet supprimé du localStorage
+                let ids = JSON.parse(localStorage.getItem("id"));
+                ids = ids.filter((item) => item !== id);
+                localStorage.setItem("id", JSON.stringify(ids));
+              })
 
               .catch((err) => console.log("il y a un problème" + err));
           }
