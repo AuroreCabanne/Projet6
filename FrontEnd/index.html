@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet"/>
     <script src="https://kit.fontawesome.com/f266b52627.js" crossorigin="anonymous"></script>
     <meta name="description" content="" />
-    <script src="./assets/javaScript/index.js"></script>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
 
@@ -18,12 +17,9 @@
     <div id="modifer"></div>
     <!-- PAGE MODALE -->
 
-    <!-- Une page modale est une fenêtre contextuelle qui apparaît pour afficher du contenu supplémentaire sans quitter la page en cours d'affichage -->
     <aside id="modal" class="modal" aria-hidden="true" style="display: none">
-      <!-- Un trigger de modale est un élément qui déclenche l'affichage de la page modale -->
       <div class="modal_trigger"></div>
       <div class="modal_container js_modal_stop">
-        <!-- Le bouton de fermeture de la modale permet à l'utilisateur de fermer la fenêtre modale en cliquant sur ce bouton -->
         <button id="model_fermer">x</button>
         <section class="model_body">
           <i class="fa-solid fa-arrows-up-down-left-right"></i>
@@ -47,35 +43,24 @@
       style="display: none"
       enctype="multipart/form-data"
     >
-      <!-- Déclencheur de la modale -->
+    
       <div class="modal_trigger"></div>
-      <!-- Conteneur principal de la modale -->
       <div class="modal_container js_modal_stop">
-        <!-- Bouton de fermeture de la modale -->
         <button id="model_fermer_ajouter">x</button>
-        <!-- Bouton de navigation à gauche -->
         <i id="left" class="fa-sharp fa-solid fa-arrow-left"></i>
-        <!-- Corps de la modale -->
         <section class="model_body">
-          <!-- Titre de la modale -->
           <h2 class="model_titre">Ajout photo</h2>
-          <!-- Conteneur de la galerie de photos -->
           <div id="model_gallery_ajout">
-            <!-- Conteneur de l'ajout de photo -->
             <div class="model_ajout">
-              <!-- Conteneur de l'affichage de l'image téléchargée -->
               <div id="image_telecharger_images" style="display: none">
                 <div id="image_telecharger"></div>
               </div>
-              <!-- Conteneur principal de l'ajout de photo -->
               <div id="model_ajout_container" style="display: contents">
-                <!-- Image de démo -->
                 <img
                   class="photo"
                   src="./assets/images/photo.PNG"
                   alt="image"
                 />
-                <!-- Champ de sélection de fichier pour l'image -->
                 <input
                   name="image"
                   type="file"
@@ -83,32 +68,24 @@
                   accept="image/png , image/jpg  "
                   class="input_img_btn"
                 />
-                <!-- Bouton d'ajout de photo -->
                 <button id="ajout" class="model_ajoute ajout">
                   + Ajouter photo
                 </button>
-                <!-- Information sur le format de fichier accepté -->
                 <p>jpg, png : 4mo max</p>
               </div>
             </div>
-            <!-- Message d'erreur pour l'ajout de photo -->
             <label id="msg_err"></label>
-            <!-- Champ de saisie pour le titre de la photo -->
             <div class="input_modal_ajout">
               <label>Titre</label>
               <input name="title" id="input_model" class="input_model" />
             </div>
-            <!-- Champ de sélection pour la catégorie -->
             <div class="input_modal_ajout">
-              <!-- Label pour le champ "Catégorie" -->
               <label>Catégorie</label>
-              <!-- Liste déroulante pour sélectionner la catégorie -->
               <select
                 name="category"
                 id="categorie"
                 class="input_modal_ajout_choix"
               >
-                <!-- Options pour les catégories -->
                 <option value="Objets">Objets</option>
                 <option value="Appartements">Appartements</option>
                 <option value="Hotels & restaurants">
@@ -116,19 +93,15 @@
                 </option>
               </select>
             </div>
-            <!-- Fin de la section des champs de saisie -->
           </div>
-          <!-- Bouton de validation -->
+          
           <div class="modal_ajout_valider">
             <button type="submit" id="btn_valider" class="model_ajoute valider">
               Valider
             </button>
           </div>
-          <!-- Fin de la section du bouton de validation -->
         </section>
-        <!-- Fin de la section du formulaire -->
       </div>
-      <!-- Fin du modal -->
     </form>
 
     <header>
@@ -193,5 +166,6 @@
         </ul>
       </nav>
     </footer>
+    <script src="./assets/javaScript/index.js"></script>
   </body>
 </html>
