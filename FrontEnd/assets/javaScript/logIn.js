@@ -1,11 +1,7 @@
-// Référence aux éléments HTML pour les identifiants d'email et de mot de passe
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-// Référence à l'élément HTML pour afficher les erreurs
 const error = document.getElementById("error");
-// Référence à l'élément HTML pour soumettre le formulaire
 const valid = document.getElementById("login-form-submit");
-// Référence à l'élément HTML pour le formulaire de connexion
 const form = document.getElementById("login-form");
 
 // Écouteur d'événement pour le formulaire de connexion
@@ -28,11 +24,11 @@ form.addEventListener("submit", function (e) {
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
-      // Si le retour du serveur contient un identifiant d'utilisateur valide, entre dans la page modèle
+      // Si le retour du serveur contient un identifiant d'utilisateur valide, entre dans la page modale
       if (data.userId == 1) {
         // Stocke le jeton dans le localStorage
         localStorage.setItem("token", data.token);
-        // Redirection vers la page modèle
+        // Redirection vers la page modale
         location.href = "../../index.html";
       } else {
         // Affiche une erreur si les informations de connexion sont incorrectes
@@ -41,7 +37,7 @@ form.addEventListener("submit", function (e) {
         function msgdelete() {
           error.innerText = "";
         }
-        setTimeout(msgdelete, 50000); //Enlève message d'erreur après 50000 milisecondes (50 secondes)
+        setTimeout(msgdelete, 50000); //Enlève message d'erreur après 50000 milisecondes
       }
     })
     .catch((err) => console.log(err)); // Affiche l'erreur dans la console en cas d'erreur de demande

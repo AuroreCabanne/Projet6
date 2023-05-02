@@ -163,6 +163,7 @@ fetch("http://localhost:5678/api/works").then((res) => {
 /////entrer a la page model
 if (localStorage.getItem("token")) {
   let tableauId = [];
+  console.log ("local Storage")
   //replacer le login par logout
   document.getElementById("login").innerText = "logout";
   //remove btn tous
@@ -184,7 +185,7 @@ if (localStorage.getItem("token")) {
 <p>Mode édition</p>  </div>`;
   edition.insertAdjacentHTML("afterbegin", modification);
   edition.className = "edition";
-  //edition.onclick = function () {}
+  edition.onclick = function () {}
   // Création d'un bouton "modifier"
   const modifier = `
 
@@ -550,18 +551,19 @@ if (localStorage.getItem("token")) {
     }
   });
 
-  ///////////////publier les changements
+  ///////////////publier les changements///////////////////
   const changment = document.createElement("button");
   changment.type = "button";
 
   const modification_changment = `
-<p>publier les changements</p>  `;
+  <p>publier les changements</p>  `;
   changment.insertAdjacentHTML("beforeend", modification_changment);
   changment.className = "publier";
 
   changment.onclick = function () {};
   const changements = document.getElementById("modifer");
   changements.appendChild(changment);
+
 }
 //sortir de la page model
 document.getElementById("login").addEventListener("click", function () {
