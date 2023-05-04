@@ -217,6 +217,18 @@ if (localStorage.getItem("token")) {
 
   // Cette fonction effectue une requête fetch pour récupérer les données des projets
   function suppression() {
+    // Sélectionne toutes les éléments avec la classe "image_supprime"
+  const imagesSupprimees = document.querySelectorAll(".image_supprime");
+
+  // Parcoure et supprime chaque élément avec la classe "image_supprime"
+  imagesSupprimees.forEach((image) => {
+    image.remove();
+  });
+
+  // Supprime l'image de la modale d'ajout
+  const ajoutImage = document.getElementById("image_telecharger");
+  ajoutImage.style.backgroundImage = "";
+
     fetch("http://localhost:5678/api/works").then((res) => {
       if (res.ok) {
         res.json().then((data) => {
@@ -394,6 +406,8 @@ if (localStorage.getItem("token")) {
     category.value = null;
 
     // Ferme le modal quand on clique en dehors
+
+    suppression();
   }
 
   // Ajoute un écouteur d'événements pour ouvrir le modal d'ajout de photo
@@ -426,6 +440,8 @@ if (localStorage.getItem("token")) {
 
     // Supprime le message d'erreur
     document.getElementById("msg_err").innerHTML = "";
+
+    suppression();
   }
 
   // Ajoute un écouteur d'événements pour fermer le modal d'ajout de photo
@@ -465,7 +481,7 @@ if (localStorage.getItem("token")) {
   // Ajoute un écouteur d'événements pour télécharger les photos
   document.getElementById("img_input").addEventListener("change", telecharger);
 
-  ///////////////////Envoi des fichiers a API///////////////////
+  ///////////////////ENVOYER DES FICHIERS A L'API///////////////////
 
   document.getElementById("modal_ajout").addEventListener("submit", (e) => {
     e.preventDefault();
